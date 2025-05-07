@@ -1,0 +1,82 @@
+// Nav Menu.
+.elementor-widget-nav-menu {
+
+	// Base Theme Widget Styles.
+	&.vamtam-has-theme-widget-styles {
+		.sub-arrow {
+			font-size: 16px;
+		}
+
+		html.ios-safari & li {
+			outline: 0 !important;
+		}
+
+		&.vamtam-hr-underline .elementor-nav-menu--main .elementor-nav-menu .menu-item .elementor-item::after {
+			bottom: 20px;
+		}
+
+		&.vamtam-menu-icon {
+			&.elementor-nav-menu--toggle {
+				.eicon-menu-bar {
+					font-family: theme-icons;
+
+					&:before {
+						content: "\e90c";
+						content: "\e90c";
+					}
+				}
+
+				.eicon-close {
+					font-family: theme-icons;
+
+					&:before {
+						content: "\e904";
+					}
+				}
+			}
+		}
+
+		&.vamtam-menu-indicator {
+			ul.elementor-nav-menu {
+				>li {
+
+					&.menu-item-has-children,
+					&[class*="mega-menu"] {
+						&::before {
+							content: "\f0d7";
+							color: var(--vamtam-menu-color);
+							display: inline-block;
+							font-family: "Font Awesome 5 Free";
+							font-size: 12px;
+							font-weight: 900;
+							line-height: 1;
+							position: absolute;
+							right: calc(var(--e-nav-menu-horizontal-menu-item-margin, 0px) - 7.5px);
+							align-self: center;
+							-moz-osx-font-smoothing: grayscale;
+							-webkit-font-smoothing: antialiased;
+						}
+
+						&:last-child::before {
+							right: -7.5px;
+						}
+
+						&:hover::before {
+							color: var(--vamtam-menu-color-hover);
+						}
+
+						&:active::before {
+							color: var(--vamtam-menu-color-active);
+						}
+					}
+				}
+			}
+		}
+
+		&:not(.vamtam-has-submenu-icon) {
+			.elementor-nav-menu .sub-arrow {
+				display: none;
+			}
+		}
+	}
+}
