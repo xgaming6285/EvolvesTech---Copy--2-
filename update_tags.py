@@ -2,25 +2,34 @@ import os
 from bs4 import BeautifulSoup, NavigableString
 import re
 
-# Regex to find internal image URLs in CSS: url(path/to/image.ext)
+# --- START OF REGEX PATTERNS ---
+
+# Regex for CSS: url(path/to/image.ext)
 # Captures:
 # Group 1: Optional quote (' or ")
 # Group 2: The internal image path (e.g., "wp-content/uploads/image.jpg")
-CSS_URL_PATTERN = re.compile(
-    r'url\s*\(\s*(["\']?)(?!https?://|//|data:)([^\s)"\']*\.(?:png|jpg|jpeg))\1\s*\)',
-    re.IGNORECASE
-)
-# If paths with spaces *inside unquoted* url() are common and need to be supported,
-# the path part `[^\s)"\']*` might need to be `.+?` but that requires careful testing.
-# For standard CSS, `url(path with space.png)` is invalid; it should be `url("path with space.png")`.
-# The current regex: url\s*\(\s*(["\']?)(?!https?://|//|data:)(.+?\.(?:png|jpg|jpeg))\1\s*\)
-# This one is generally more robust for various path characters if properly quoted or simple.
+# This version uses `.+?` for the path, making it more robust for various path characters
+# if properly quoted or for simple unquoted paths.
 CSS_URL_PATTERN = re.compile(
     r'url\s*\(\s*(["\']?)(?!https?://|//|data:)(.+?\.(?:png|jpg|jpeg))\1\s*\)',
     re.IGNORECASE
 )
 
+# Regex for JS: "path/to/image.ext" or 'path/to/image.ext' or `path/to/image.ext`
+# Captures:
+# Group 1: The quote character (", ', or `)
+# Group 2: The internal image path
+JS_IMG_URL_PATTERN = re.compile(
+    r'(["\'`])'  # Group 1: Opening quote (", ', or `)
+    r'(?!https?://|//|data:)'  # Negative lookahead: not an external URL or data URI
+    r'(.+?\.(?:png|jpg|jpeg))'  # Group 2: The image path (non-greedy match for path, ends with extension)
+    r'\1',  # Matches the same opening quote
+    re.IGNORECASE
+)
+# --- END OF REGEX PATTERNS ---
 
+
+# --- START OF CSS PROCESSING FUNCTIONS ---
 def replace_css_image_path_to_webp(match_obj):
     """Callback function for re.sub to replace image extension in a CSS url() path."""
     quote = match_obj.group(1)
@@ -35,7 +44,28 @@ def update_css_text_content(css_text):
     """
     modified_css_text, num_replacements = CSS_URL_PATTERN.subn(replace_css_image_path_to_webp, css_text)
     return modified_css_text, num_replacements > 0
+# --- END OF CSS PROCESSING FUNCTIONS ---
 
+
+# --- START OF JS PROCESSING FUNCTIONS ---
+def replace_js_image_path_to_webp(match_obj):
+    """Callback function for re.sub to replace image extension in a JS string literal."""
+    quote = match_obj.group(1)
+    image_path = match_obj.group(2)
+    new_image_path = re.sub(r'\.(png|jpg|jpeg)$', '.webp', image_path, flags=re.IGNORECASE)
+    return f'{quote}{new_image_path}{quote}'
+
+def update_js_text_content(js_text):
+    """
+    Updates internal image URLs within string literals in JS content to .webp.
+    Returns the modified JS text and a boolean indicating if changes were made.
+    """
+    modified_js_text, num_replacements = JS_IMG_URL_PATTERN.subn(replace_js_image_path_to_webp, js_text)
+    return modified_js_text, num_replacements > 0
+# --- END OF JS PROCESSING FUNCTIONS ---
+
+
+# --- START OF HTML ATTRIBUTE PROCESSING (srcset) ---
 def process_srcset_attribute(srcset_value):
     """
     Processes a srcset attribute string, converting internal image URLs to .webp.
@@ -80,8 +110,10 @@ def process_srcset_attribute(srcset_value):
     if changed_overall:
         return ', '.join(new_parts), True
     return srcset_value, False
+# --- END OF HTML ATTRIBUTE PROCESSING (srcset) ---
 
 
+# --- START OF FILE PROCESSING FUNCTIONS ---
 def process_html_file(file_path):
     try:
         with open(file_path, 'r', encoding='utf-8') as file:
@@ -199,15 +231,51 @@ def process_html_file(file_path):
     except Exception as e:
         print(f"Error processing {file_path}: {str(e)}")
 
+def process_css_file(file_path):
+    """Processes a .css file to update internal image URLs to .webp."""
+    try:
+        with open(file_path, 'r', encoding='utf-8') as file:
+            content = file.read()
+        
+        modified_content, changes_made = update_css_text_content(content)
+        
+        if changes_made:
+            with open(file_path, 'w', encoding='utf-8') as file:
+                file.write(modified_content)
+            print(f"Modified: {file_path}")
+    except Exception as e:
+        print(f"Error processing {file_path}: {str(e)}")
+
+def process_js_file(file_path):
+    """Processes a .js file to update internal image URLs in string literals to .webp."""
+    try:
+        with open(file_path, 'r', encoding='utf-8') as file:
+            content = file.read()
+        
+        modified_content, changes_made = update_js_text_content(content)
+        
+        if changes_made:
+            with open(file_path, 'w', encoding='utf-8') as file:
+                file.write(modified_content)
+            print(f"Modified: {file_path}")
+    except Exception as e:
+        print(f"Error processing {file_path}: {str(e)}")
+# --- END OF FILE PROCESSING FUNCTIONS ---
+
+
 def process_directory(directory):
     for root, _, files in os.walk(directory):
         for file_name in files:
+            file_path = os.path.join(root, file_name)
             if file_name.endswith('.html'):
-                file_path = os.path.join(root, file_name)
                 process_html_file(file_path)
+            elif file_name.endswith('.css'):
+                process_css_file(file_path)
+            elif file_name.endswith('.js'):
+                process_js_file(file_path)
 
 if __name__ == "__main__":
-    directory = input("Enter the directory path containing HTML files: ")
+    directory = input("Enter the directory path containing HTML, CSS, and JS files: ")
     if os.path.isdir(directory):
         process_directory(directory)
         print("Processing complete.")
