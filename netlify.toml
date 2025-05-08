@@ -1,6 +1,5 @@
 [build]
-  # This tells Netlify that the final website files are in the 'evolves' directory
-  publish = "evolves"
+  publish = "evolves/www.evolves.tech"
 
 # You might not need a build command if it's just static HTML/CSS/JS
 # command = "your-build-command" # e.g., npm run build, if you have one
