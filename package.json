@@ -1,0 +1,11 @@
+{
+    "name": "my-website-critical-css",
+    "version": "1.0.0",
+    "description": "Generates critical CSS for my website.",
+    "scripts": {
+      "generate-css": "node generate-critical-css.js"
+    },
+    "devDependencies": {
+      "critical": "^5.1.1"
+    }
+  }
