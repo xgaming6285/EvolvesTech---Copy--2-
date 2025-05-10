@@ -1,5 +1,3 @@
 [build]
+  command = "npm install && node generate-critical-css.js"
   publish = "evolves/www.evolves.tech"
-
-# You might not need a build command if it's just static HTML/CSS/JS
-# command = "your-build-command" # e.g., npm run build, if you have one
