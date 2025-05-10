@@ -6,6 +6,6 @@
       "generate-css": "node generate-critical-css.js"
     },
     "devDependencies": {
-      "critical": "^5.1.1"
+      "critical": "^4.0.1"
     }
   }
