@@ -1,0 +1,159 @@
+/*
+  Cache-Control: max-age=3600, must-revalidate
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  X-XSS-Protection: 1; mode=block
+
+# Cache long files
+/wp-content/plugins/auto-listings-pro/assets/fonts/*.eot
+  Cache-Control: public, max-age=31536000, immutable
+/wp-content/plugins/auto-listings-pro/assets/fonts/*.svg
+  Cache-Control: public, max-age=31536000, immutable
+/wp-content/plugins/auto-listings-pro/assets/fonts/*.ttf
+  Cache-Control: public, max-age=31536000, immutable
+/wp-content/plugins/auto-listings-pro/assets/fonts/*.woff
+  Cache-Control: public, max-age=31536000, immutable
+/wp-content/themes/tecnologia/vamtam/assets/fonts/*.woff2
+  Cache-Control: public, max-age=31536000, immutable
+/wp-content/themes/tecnologia/vamtam/assets/fonts/icons/*.ttf
+  Cache-Control: public, max-age=31536000, immutable
+/wp-content/themes/tecnologia/vamtam/assets/fonts/icons/*.woff
+  Cache-Control: public, max-age=31536000, immutable
+/wp-content/themes/tecnologia/vamtam/assets/fonts/icons/*.woff2
+  Cache-Control: public, max-age=31536000, immutable
+/wp-content/themes/tecnologia/vamtam/assets/fonts/theme-icons/*.woff
+  Cache-Control: public, max-age=31536000, immutable
+/wp-content/themes/tecnologia/vamtam/assets/fonts/theme-icons/*.woff2
+  Cache-Control: public, max-age=31536000, immutable
+/wp-content/themes/tecnologia/vamtam/assets/images/*.gif
+  Cache-Control: public, max-age=31536000, immutable
+/wp-content/uploads/2023/03/*.svg
+  Cache-Control: public, max-age=31536000, immutable
+/wp-content/uploads/2023/03/*.webp
+  Cache-Control: public, max-age=31536000, immutable
+/wp-content/uploads/2023/04/*.svg
+  Cache-Control: public, max-age=31536000, immutable
+/wp-content/uploads/2023/04/*.webp
+  Cache-Control: public, max-age=31536000, immutable
+/wp-content/uploads/2024/03/*.webp
+  Cache-Control: public, max-age=31536000, immutable
+/wp-content/uploads/2024/04/*.webp
+  Cache-Control: public, max-age=31536000, immutable
+/wp-content/uploads/elementor/custom-icons/theme-icons/fonts/*.eot
+  Cache-Control: public, max-age=31536000, immutable
+/wp-content/uploads/elementor/custom-icons/theme-icons/fonts/*.svg
+  Cache-Control: public, max-age=31536000, immutable
+/wp-content/uploads/elementor/custom-icons/theme-icons/fonts/*.ttf
+  Cache-Control: public, max-age=31536000, immutable
+/wp-content/uploads/elementor/custom-icons/theme-icons/fonts/*.woff
+  Cache-Control: public, max-age=31536000, immutable
+
+# Cache code files
+/*.json
+  Cache-Control: public, max-age=31536000, immutable
+/wp-content/plugins/add-search-to-menu/public/css/*.css
+  Cache-Control: public, max-age=31536000, immutable
+/wp-content/plugins/add-search-to-menu/public/js/*.js
+  Cache-Control: public, max-age=31536000, immutable
+/wp-content/plugins/auto-listings-pro/assets/css/*.css
+  Cache-Control: public, max-age=31536000, immutable
+/wp-content/plugins/auto-listings-pro/assets/js/*.js
+  Cache-Control: public, max-age=31536000, immutable
+/wp-content/plugins/contact-form-7/includes/css/*.css
+  Cache-Control: public, max-age=31536000, immutable
+/wp-content/plugins/contact-form-7/includes/js/*.js
+  Cache-Control: public, max-age=31536000, immutable
+/wp-content/plugins/contact-form-7/includes/swv/js/*.js
+  Cache-Control: public, max-age=31536000, immutable
+/wp-content/plugins/cookie-law-info/lite/frontend/js/*.js
+  Cache-Control: public, max-age=31536000, immutable
+/wp-content/plugins/elementor-pro/assets/css/*.css
+  Cache-Control: public, max-age=31536000, immutable
+/wp-content/plugins/elementor-pro/assets/js/*.js
+  Cache-Control: public, max-age=31536000, immutable
+/wp-content/plugins/elementor-pro/assets/lib/instant-page/*.js
+  Cache-Control: public, max-age=31536000, immutable
+/wp-content/plugins/elementor-pro/assets/lib/smartmenus/*.js
+  Cache-Control: public, max-age=31536000, immutable
+/wp-content/plugins/elementor-pro/assets/lib/sticky/*.js
+  Cache-Control: public, max-age=31536000, immutable
+/wp-content/plugins/elementor/assets/css/*.css
+  Cache-Control: public, max-age=31536000, immutable
+/wp-content/plugins/elementor/assets/js/*.js
+  Cache-Control: public, max-age=31536000, immutable
+/wp-content/plugins/elementor/assets/lib/animations/*.css
+  Cache-Control: public, max-age=31536000, immutable
+/wp-content/plugins/elementor/assets/lib/dialog/*.js
+  Cache-Control: public, max-age=31536000, immutable
+/wp-content/plugins/elementor/assets/lib/swiper/v8/css/*.css
+  Cache-Control: public, max-age=31536000, immutable
+/wp-content/plugins/elementor/assets/lib/waypoints/*.js
+  Cache-Control: public, max-age=31536000, immutable
+/wp-content/plugins/redux-framework/redux-core/assets/css/*.css
+  Cache-Control: public, max-age=31536000, immutable
+/wp-content/plugins/vamtam-elementor-integration-tecnologia/assets/js/*.js
+  Cache-Control: public, max-age=31536000, immutable
+/wp-content/plugins/vamtam-elementor-integration-tecnologia/assets/js/widgets/button/*.js
+  Cache-Control: public, max-age=31536000, immutable
+/wp-content/plugins/vamtam-elementor-integration-tecnologia/assets/js/widgets/nav-menu/*.js
+  Cache-Control: public, max-age=31536000, immutable
+/wp-content/plugins/vamtam-elementor-integration-tecnologia/assets/js/widgets/posts-base/*.js
+  Cache-Control: public, max-age=31536000, immutable
+/wp-content/plugins/vamtam-elementor-integration-tecnologia/assets/js/widgets/vamtam-hr-scrolling/*.js
+  Cache-Control: public, max-age=31536000, immutable
+/wp-content/themes/tecnologia/vamtam/assets/css/dist/elementor/*.css
+  Cache-Control: public, max-age=31536000, immutable
+/wp-content/themes/tecnologia/vamtam/assets/css/dist/elementor/responsive/*.css
+  Cache-Control: public, max-age=31536000, immutable
+/wp-content/themes/tecnologia/vamtam/assets/js/*.js
+  Cache-Control: public, max-age=31536000, immutable
+/wp-content/uploads/elementor/css/*.css
+  Cache-Control: public, max-age=31536000, immutable
+/wp-content/uploads/elementor/custom-icons/theme-icons/*.css
+  Cache-Control: public, max-age=31536000, immutable
+/wp-includes/js/*.js
+  Cache-Control: public, max-age=31536000, immutable
+/wp-includes/js/dist/*.js
+  Cache-Control: public, max-age=31536000, immutable
+/wp-includes/js/jquery/*.js
+  Cache-Control: public, max-age=31536000, immutable
+/wp-includes/js/jquery/ui/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+# Cache content files
+/*.html
+  Cache-Control: public, max-age=3600, must-revalidate
+/-negative.svg/*.html
+  Cache-Control: public, max-age=3600, must-revalidate
+/OPR/*.html
+  Cache-Control: public, max-age=3600, must-revalidate
+/document.location/*.html
+  Cache-Control: public, max-age=3600, must-revalidate
+/industries/*.html
+  Cache-Control: public, max-age=3600, must-revalidate
+/industries/consulting-providers/*.html
+  Cache-Control: public, max-age=3600, must-revalidate
+/industries/non-profit/*.html
+  Cache-Control: public, max-age=3600, must-revalidate
+/solutions/cloud-services/*.html
+  Cache-Control: public, max-age=3600, must-revalidate
+/solutions/cyber-security/*.html
+  Cache-Control: public, max-age=3600, must-revalidate
+/solutions/it-consulting-advisory/*.html
+  Cache-Control: public, max-age=3600, must-revalidate
+/solutions/managed-services/*.html
+  Cache-Control: public, max-age=3600, must-revalidate
+/t/*.html
+  Cache-Control: public, max-age=3600, must-revalidate
+
+# Netlify's immutable assets (often hashed)
+/_netlify/static/*
+  Cache-Control: public, max-age=31536000, immutable
+/_netlify/images/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Default for anything not matched: no cache, to be safe
+/*
+  Cache-Control: no-cache, no-store, must-revalidate
+  Pragma: no-cache
+  Expires: 0

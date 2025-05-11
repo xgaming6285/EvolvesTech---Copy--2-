@@ -1,3 +1,2 @@
 [build]
-  command = "npm install && node generate-critical-css.js"
   publish = "evolves/www.evolves.tech"
