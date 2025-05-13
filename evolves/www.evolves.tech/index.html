@@ -7,13 +7,14 @@
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" as="image"
-      href="wp-content/uploads/2024/04/image_2024_04_04T10_58_31_926Z-772w.webp"
-      fetchpriority="high"
-      type="image/webp">
-    <link rel="preload" href="/wp-content/themes/tecnologia/vamtam/assets/fonts/inter-tight-v7-latin-600.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/wp-content/themes/tecnologia/vamtam/assets/fonts/inter-tight-v7-latin-700.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/wp-content/themes/tecnologia/vamtam/assets/fonts/inter-v18-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" as="image" href="wp-content/uploads/2024/04/image_2024_04_04T10_58_31_926Z-772w.webp"
+        fetchpriority="high" type="image/webp">
+    <link rel="preload" href="/wp-content/themes/tecnologia/vamtam/assets/fonts/inter-tight-v7-latin-600.woff2"
+        as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/wp-content/themes/tecnologia/vamtam/assets/fonts/inter-tight-v7-latin-700.woff2"
+        as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/wp-content/themes/tecnologia/vamtam/assets/fonts/inter-v18-latin-regular.woff2" as="font"
+        type="font/woff2" crossorigin>
     <meta content="IE=edge" http-equiv="X-UA-Compatible" />
     <style id="vamtam-theme-options">
         :root {
@@ -196,7 +197,7 @@
             contain-intrinsic-size: 3000px 1500px
         }
     </style>
-    
+
     <title>Home - Evolves Tech - Evolves Tech</title>
     <link href="index.html" rel="canonical" />
     <meta content="en_US" property="og:locale">
@@ -589,8 +590,12 @@
         media="all" rel="stylesheet" type="text/css" />
     <link href="wp-content/plugins/add-search-to-menu/public/css/ivory-search.min24b2.css?ver=5.5.5"
         id="ivory-search-styles-css" media="all" rel="stylesheet" type="text/css" />
-    <link href="wp-content/plugins/elementor/assets/css/frontend-lite.mince8e.css?ver=3.20.3"
-        id="elementor-frontend-css" media="all" rel="stylesheet" type="text/css" />
+    <link rel="preload" href="wp-content/plugins/elementor/assets/css/frontend-lite.mince8e.css?ver=3.20.3" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="wp-content/plugins/elementor/assets/css/frontend-lite.mince8e.css?ver=3.20.3"
+            id="elementor-frontend-css" media="all" type="text/css">
+    </noscript>
     <link href="wp-content/plugins/elementor/assets/lib/swiper/v8/css/swiper.min94a4.css?ver=8.4.5" id="swiper-css"
         media="all" rel="stylesheet" type="text/css" />
     <link href="wp-content/uploads/elementor/css/post-126dfc.css?ver=1735133742" id="elementor-post-12-css" media="all"
@@ -607,8 +612,12 @@
         media="all" rel="stylesheet" type="text/css" />
     <link href="wp-content/uploads/elementor/css/post-1607326b.css?ver=1735133744" id="elementor-post-1607-css"
         media="all" rel="stylesheet" type="text/css" />
-    <link href="wp-content/uploads/elementor/css/post-1450326b.css?ver=1735133744" id="elementor-post-1450-css"
-        media="all" rel="stylesheet" type="text/css" />
+    <link rel="preload" href="wp-content/uploads/elementor/css/post-1450326b.css?ver=1735133744" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="wp-content/uploads/elementor/css/post-1450326b.css?ver=1735133744"
+            id="elementor-post-1450-css" media="all" type="text/css">
+    </noscript>
     <link href="wp-content/plugins/auto-listings-pro/assets/css/bootstrap-grid0ba6.css?ver=1.0.6" id="bootstrap-css"
         media="all" rel="stylesheet" type="text/css" />
     <link href="wp-content/plugins/auto-listings-pro/assets/css/auto-listings0ba6.css?ver=1.0.6"
@@ -634,36 +643,43 @@
             font-style: normal;
             font-display: swap;
         }
+
         /* Inter Tight - 600 Normal */
         @font-face {
-        font-family: 'Inter Tight';
-        font-style: normal;
-        font-weight: 600;
-        font-display: swap; /* Crucial! */
-        src: local(''),
-            url('wp-content/themes/tecnologia/vamtam/assets/fonts/inter-tight-v7-latin-600.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-            url('wp-content/themes/tecnologia/vamtam/assets/fonts/inter-tight-v7-latin-600.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+            font-family: 'Inter Tight';
+            font-style: normal;
+            font-weight: 600;
+            font-display: swap;
+            /* Crucial! */
+            src: local(''),
+                url('wp-content/themes/tecnologia/vamtam/assets/fonts/inter-tight-v7-latin-600.woff2') format('woff2'),
+                /* Chrome 26+, Opera 23+, Firefox 39+ */
+                url('wp-content/themes/tecnologia/vamtam/assets/fonts/inter-tight-v7-latin-600.woff') format('woff');
+            /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
         }
 
         /* Inter Tight - 700 Normal */
         @font-face {
-        font-family: 'Inter Tight';
-        font-style: normal;
-        font-weight: 700;
-        font-display: swap; /* Crucial! */
-        src: local(''),
-            url('wp-content/themes/tecnologia/vamtam/assets/fonts/inter-tight-v7-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-            url('wp-content/themes/tecnologia/vamtam/assets/fonts/inter-tight-v7-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+            font-family: 'Inter Tight';
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            /* Crucial! */
+            src: local(''),
+                url('wp-content/themes/tecnologia/vamtam/assets/fonts/inter-tight-v7-latin-700.woff2') format('woff2'),
+                /* Chrome 26+, Opera 23+, Firefox 39+ */
+                url('wp-content/themes/tecnologia/vamtam/assets/fonts/inter-tight-v7-latin-700.woff') format('woff');
+            /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
         }
 
         @font-face {
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 400;
-        font-display: swap;
-        src: local(''),
-            url('wp-content/themes/tecnologia/vamtam/assets/fonts/inter-v18-latin-regular.woff2') format('woff2'),
-            url('wp-content/themes/tecnologia/vamtam/assets/fonts/inter-v18-latin-regular.woff') format('woff');
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: local(''),
+                url('wp-content/themes/tecnologia/vamtam/assets/fonts/inter-v18-latin-regular.woff2') format('woff2'),
+                url('wp-content/themes/tecnologia/vamtam/assets/fonts/inter-v18-latin-regular.woff') format('woff');
         }
     </style>
     <link
@@ -1974,18 +1990,15 @@
                                                     data-widget_type="image.default">
                                                     <div class="elementor-widget-container">
                                                         <img alt="Descriptive alt text for the image"
-                                                        class="wp-image-988746"
-                                                        decoding="async"
-                                                        fetchpriority="high"
-                                                        loading="eager"
-                                                        height="475"
-                                                        width="772"  
-                                                        src="wp-content/uploads/2024/04/image_2024_04_04T10_58_31_926Z-772w.webp"
-                                                        srcset="wp-content/uploads/2024/04/image_2024_04_04T10_58_31_926Z-386w.webp 386w,
+                                                            class="wp-image-988746" decoding="async"
+                                                            fetchpriority="high" loading="eager" height="475"
+                                                            width="772"
+                                                            src="wp-content/uploads/2024/04/image_2024_04_04T10_58_31_926Z-772w.webp"
+                                                            srcset="wp-content/uploads/2024/04/image_2024_04_04T10_58_31_926Z-386w.webp 386w,
                                                                 wp-content/uploads/2024/04/image_2024_04_04T10_58_31_926Z-772w.webp 772w,
                                                                 wp-content/uploads/2024/04/image_2024_04_04T10_58_31_926Z-1158w.webp 1158w,
                                                                 wp-content/uploads/2024/04/image_2024_04_04T10_58_31_926Z-1544w.webp 1544w"
-                                                        sizes="(max-width: 772px) 100vw, 772px"/>
+                                                            sizes="(max-width: 772px) 100vw, 772px" />
                                                     </div>
                                                 </div>
                                             </div>
